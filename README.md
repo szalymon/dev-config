@@ -1,4 +1,4 @@
-# My personal unix dev configuration
+# Personal unix dev configuration
 
 ## Installation
 
