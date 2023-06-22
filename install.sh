@@ -18,5 +18,6 @@ rm ~/.tmux.conf
 echo "Create tmux config"
 cp ./tmux/.tmux.conf ~/
 
+echo "Execute [prefix + I] to install tmux plugins"
 
 
