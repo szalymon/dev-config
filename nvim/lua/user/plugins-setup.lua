@@ -37,6 +37,8 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
+	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
+
 	-- schemes
 	use({ "ellisonleao/gruvbox.nvim" })
 	use("navarasu/onedark.nvim")
