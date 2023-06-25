@@ -115,6 +115,19 @@ return packer.startup(function(use)
 	--
 	--
 	-- TODO: install vim-tmux-plugin
+	--
+	--
+	--
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	-- use("folke/which-key.nvim")
 	-- use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
