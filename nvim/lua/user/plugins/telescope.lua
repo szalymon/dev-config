@@ -10,6 +10,9 @@ end
 
 telescope.setup({
 	defaults = {
+		file_ignore_patterns = {
+			"static%-build",
+		},
 		mappings = {
 			i = {
 				["<C-n>"] = actions.cycle_history_next,
