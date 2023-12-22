@@ -1,5 +1,5 @@
 local autopairs_setup, autopairs = pcall(require, "nvim-autopairs")
-if autopairs_setup then
+if not autopairs_setup then
 	return
 end
 

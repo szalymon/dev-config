@@ -84,6 +84,9 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 
 keymap("n", "<leader>ld", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+keymap("n", "<leader>lw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
+
+keymap("n", "<leader>jf", "<cmd>NvimTreeFindFile<cr>", opts)
 
 --- Tmux integration
 keymap("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", opts)
