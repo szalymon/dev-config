@@ -9,107 +9,306 @@ require("bufferline").setup({
 		left_trunc_marker = "",
 		right_trunc_marker = "",
 
-		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = "File Explorer",
+				text_align = "left",
+				separator = true,
+			},
+		},
+		color_icons = true,
 		show_buffer_icons = true,
 		show_buffer_close_icons = true,
 		show_close_icon = true,
 		show_tab_indicators = true,
 		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-		separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+		separator_style = "thick", -- | "thick" | "thin" | { 'any', 'any' },
 		enforce_regular_tabs = true,
 		always_show_bufferline = true,
 	},
 	highlights = {
-		fill = {
-			-- guifg = { attribute = "fg", highlight = "#ff0000" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		background = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		-- buffer_selected = {
-		--   guifg = {attribute='fg',highlight='#ff0000'},
-		--   guibg = {attribute='bg',highlight='#0000ff'},
-		--   gui = 'none'
-		--   },
-		buffer_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		close_button = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		close_button_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
+		-- fill = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- background = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- tab = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- tab_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- tab_separator = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- tab_separator_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	underline = "<colour-value-here>",
+		-- },
+		-- tab_close = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- close_button = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- close_button_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
 		-- close_button_selected = {
-		--   guifg = {attribute='fg',highlight='TabLineSel'},
-		--   guibg ={attribute='bg',highlight='TabLineSel'}
-		--   },
-
-		tab_selected = {
-			guifg = { attribute = "fg", highlight = "Normal" },
-			guibg = { attribute = "bg", highlight = "Normal" },
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- buffer_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		buffer_selected = {
+			-- fg = { attribute = "fg", highlight = "TabLineSel" },
+			-- bg = { attribute = "fg", highlight = "GruvboxOrange" },
+			-- bg = "<colour-value-here>",
+			bold = true,
+			-- italic = true,
 		},
-		tab = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		tab_close = {
-			-- guifg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
-			guifg = { attribute = "fg", highlight = "TabLineSel" },
-			guibg = { attribute = "bg", highlight = "Normal" },
-		},
-
-		duplicate_selected = {
-			guifg = { attribute = "fg", highlight = "TabLineSel" },
-			guibg = { attribute = "bg", highlight = "TabLineSel" },
-			gui = "italic",
-		},
-		duplicate_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-			gui = "italic",
-		},
-		duplicate = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-			gui = "italic",
-		},
-
-		modified = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		modified_selected = {
-			guifg = { attribute = "fg", highlight = "Normal" },
-			guibg = { attribute = "bg", highlight = "Normal" },
-		},
-		modified_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-
-		separator = {
-			guifg = { attribute = "bg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		separator_selected = {
-			guifg = { attribute = "bg", highlight = "Normal" },
-			guibg = { attribute = "bg", highlight = "Normal" },
-		},
+		-- numbers = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- numbers_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- numbers_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- diagnostic = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- diagnostic_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- diagnostic_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- hint = {
+		-- 	fg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- hint_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- hint_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- hint_diagnostic = {
+		-- 	fg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- hint_diagnostic_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- hint_diagnostic_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- info = {
+		-- 	fg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- info_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- info_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- info_diagnostic = {
+		-- 	fg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- info_diagnostic_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- info_diagnostic_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- warning = {
+		-- 	fg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- warning_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- warning_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- warning_diagnostic = {
+		-- 	fg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- warning_diagnostic_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- warning_diagnostic_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- error = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- },
+		-- error_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- error_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- error_diagnostic = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- },
+		-- error_diagnostic_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- error_diagnostic_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	sp = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- modified = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- modified_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- modified_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- duplicate_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	italic = true,
+		-- },
+		-- duplicate_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	italic = true,
+		-- },
+		-- duplicate = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	italic = true,
+		-- },
+		-- separator_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
 		-- separator_visible = {
-		--   guifg = {attribute='bg',highlight='TabLine'},
-		--   guibg = {attribute='bg',highlight='TabLine'}
-		--   },
-		indicator_selected = {
-			guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-			guibg = { attribute = "bg", highlight = "Normal" },
-		},
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- separator = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- indicator_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- indicator_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- pick_selected = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- pick_visible = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- pick = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- 	bold = true,
+		-- 	italic = true,
+		-- },
+		-- offset_separator = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
+		-- trunc_marker = {
+		-- 	fg = "<colour-value-here>",
+		-- 	bg = "<colour-value-here>",
+		-- },
 	},
 })
