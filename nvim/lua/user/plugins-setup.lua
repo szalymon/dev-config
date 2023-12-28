@@ -82,9 +82,9 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 
 	-- snippets
+	use("rafamadriz/friendly-snippets")
 	use("L3MON4D3/LuaSnip")
 	use("saadparwaiz1/cmp_luasnip")
-	use("rafamadriz/friendly-snippets")
 	-- vim-surround
 	-- ReplaceWithRegister
 	--
