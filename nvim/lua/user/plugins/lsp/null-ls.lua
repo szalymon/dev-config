@@ -13,8 +13,11 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.black,
+		formatting.terraform_fmt,
 		diagnostics.eslint_d,
 		diagnostics.flake8,
+		diagnostics.terraform_validate,
+		diagnostics.tfsec,
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
@@ -26,7 +29,7 @@ null_ls.setup({
 				callback = function()
 					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
 					-- vim.lsp.buf.formatting_sync()
-					vim.lsp.buf.format({ bufnr = bufnr})
+					vim.lsp.buf.format({ bufnr = bufnr })
 				end,
 			})
 		end

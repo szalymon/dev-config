@@ -44,4 +44,7 @@ nvimtree.setup({
 		enable = true,
 		show_on_dirs = true,
 	},
+	view = {
+		width = 40,
+	},
 })

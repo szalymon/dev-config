@@ -139,7 +139,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- use("folke/which-key.nvim")
+	use("folke/which-key.nvim")
 	-- use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" })
 
 	-- Automatically set up your configuration after cloning packer.nvim

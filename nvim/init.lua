@@ -26,7 +26,7 @@ require("user.plugins.bufferline")
 
 require("user.plugins.nvim-tmux-navigation")
 
--- require("user.whichkey")
+require("user.plugins.whichkey")
 -- require("user.project")
 
 -- require "user.cmp"

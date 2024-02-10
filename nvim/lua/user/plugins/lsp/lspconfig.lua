@@ -116,6 +116,11 @@ lspconfig["pyright"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["terraformls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -126,6 +131,10 @@ lspconfig["rust_analyzer"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["jdtls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 -- lspconfig["json_lsp"].setup({
 --   capabilities = capabilities,
 --   on_attach = on_attach,
