@@ -10,7 +10,12 @@ end
 
 telescope.setup({
 	defaults = {
+    preview = {
+      filesize_limit = 0.1,
+    },
 		file_ignore_patterns = {
+      "__pycache__",
+      "node_modules",
 			"static%-build",
 		},
 		mappings = {

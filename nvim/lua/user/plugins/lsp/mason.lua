@@ -17,10 +17,11 @@ mason.setup()
 
 mason_lspconfig.setup({
   ensure_installed = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
-    "pyright",
+    -- "pyright",
+    "jedi_language_server",
     "lua_ls",
     "dockerls",
     "neocmake",

@@ -1,4 +1,4 @@
-vim.cmd('let g:python3_host_prog = "~/.venvs/neovim/bin/python"')
+vim.cmd('let g:python3_host_prog = "~/.config/nvim_python/.venv/bin/python"')
 
 require("user.plugins-setup")
 require("user.core.colorscheme")
@@ -20,7 +20,7 @@ require("user.plugins.lsp.lspconfig")
 
 require("user.plugins.autopairs")
 require("user.plugins.treesitter")
-require("user.plugins.lsp.null-ls")
+-- require("user.plugins.lsp.null-ls")
 
 require("user.plugins.bufferline")
 
@@ -30,17 +30,7 @@ require("user.plugins.whichkey")
 -- require("user.project")
 
 -- require "user.cmp"
--- require "user.lsp"
--- require "user.telescope"
--- require "user.treesitter"
--- require "user.autopairs"
--- require "user.comment"
 -- require "user.gitsigns"
--- require "user.nvim-tree"
--- require "user.bufferline"
--- require "user.lualine"
 -- require "user.toggleterm"
--- require "user.impatient"
 -- require "user.indentline"
--- require "user.alpha"
 -- require "user.autocommands"

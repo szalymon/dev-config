@@ -13,6 +13,9 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>nh", ":nohl<CR>", opts)
 keymap("n", "x", '"_x', opts)
 
+keymap("n", "<leader>s", ":wa<CR>", opts)
+keymap("n", "<leader>q", ":qa<CR>", opts)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
