@@ -86,4 +86,4 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
-telescope.load_extension("projects")
+-- the "neovim-project" telescope extension is registered by neovim-project's own setup

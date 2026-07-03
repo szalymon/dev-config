@@ -16,6 +16,9 @@ end
 mason.setup()
 
 mason_lspconfig.setup({
+  -- v2 auto-enables every installed server by default; keep the original behavior
+  -- where only the servers configured in lsp/lspconfig.lua are enabled.
+  automatic_enable = false,
   ensure_installed = {
     "ts_ls",
     "html",

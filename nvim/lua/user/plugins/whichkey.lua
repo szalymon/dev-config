@@ -7,7 +7,7 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 which_key.setup({
-	window = {
+	win = {
 		border = "rounded",
 	},
 })
