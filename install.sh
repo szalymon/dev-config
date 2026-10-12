@@ -5,8 +5,8 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [ "$(uname)" = "Darwin" ]; then
   if command -v brew >/dev/null 2>&1; then
-    echo "Install alacritty and Hack Nerd Font"
-    brew install --cask alacritty font-hack-nerd-font
+    echo "Install alacritty and Nerd Fonts (Hack, ComicShannsMono)"
+    brew install --cask alacritty font-hack-nerd-font font-comic-shanns-mono-nerd-font
   else
     echo "Homebrew not found, skipping alacritty and font install"
   fi
