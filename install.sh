@@ -3,6 +3,15 @@
 # absolute path of this repo, so the symlinks work regardless of the current directory
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+if [ "$(uname)" = "Darwin" ]; then
+  if command -v brew >/dev/null 2>&1; then
+    echo "Install alacritty and Hack Nerd Font"
+    brew install --cask alacritty font-hack-nerd-font
+  else
+    echo "Homebrew not found, skipping alacritty and font install"
+  fi
+fi
+
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   echo "Install tmux plugin manager"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -20,5 +29,10 @@ echo "Delete tmux config"
 rm -f ~/.tmux.conf
 echo "Link tmux config"
 ln -s "$REPO_DIR/tmux/.tmux.conf" ~/.tmux.conf
+
+echo "Delete alacritty config"
+rm -fr ~/.config/alacritty
+echo "Link alacritty config"
+ln -s "$REPO_DIR/alacritty" ~/.config/alacritty
 
 echo "Execute [prefix + I] to install tmux plugins"

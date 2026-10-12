@@ -2,7 +2,8 @@
 
 ## Installation
 
-Run the `install.sh` script.
+Run the `install.sh` script. It symlinks the nvim, tmux and alacritty configs into place.
+On macOS it also installs Alacritty and Hack Nerd Font via Homebrew.
 
 # Java setup
 
