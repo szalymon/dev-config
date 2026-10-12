@@ -81,9 +81,18 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
--- terraform: nvim-lspconfig's bundled config calls vim.lsp.codelens.enable in
--- on_attach, which only exists on nvim 0.12+; guard it so it doesn't error on 0.11.
+-- terraform: settings must be passed via init_options, NOT settings — terraform-ls
+-- does not support workspace/didChangeConfiguration (see nvim-lspconfig's bundled
+-- terraformls.lua). experimentalFeatures enable module input completion/validation.
+-- NOTE: completion/hover for a called module's inputs & outputs also requires the
+-- module to be installed locally, i.e. run `terraform init` in the project first.
 vim.lsp.config("terraformls", {
+	init_options = {
+		experimentalFeatures = {
+			validateOnSave = true,
+			prefillRequiredFields = true,
+		},
+	},
 	on_attach = function(_, bufnr)
 		if vim.lsp.codelens.enable then
 			vim.lsp.codelens.enable(true, { bufnr = bufnr })

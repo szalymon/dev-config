@@ -42,7 +42,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Close current buffer (keep the window/split open)
-keymap("n", "<leader>c", ":bp<bar>bd#<CR>", opts)
+keymap("n", "<leader>bd", ":bp<bar>bd#<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -59,6 +59,11 @@ keymap("v", ">", ">gv", opts)
 
 -- Save file
 keymap("n", "<leader>w", ":w<CR>", opts)
+
+-- Format buffer / selection (conform, falls back to LSP formatting)
+vim.keymap.set({ "n", "v" }, "<leader>lf", function()
+	require("conform").format({ async = true, lsp_format = "fallback" })
+end, opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)

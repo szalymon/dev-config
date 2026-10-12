@@ -125,10 +125,15 @@ require("lazy").setup({
 		-- mason: install lsp servers / formatters / linters
 		{ "mason-org/mason.nvim", config = function() require("user.plugins.lsp.mason") end },
 		{ "mason-org/mason-lspconfig.nvim", dependencies = { "mason-org/mason.nvim" } },
-		{ "jay-babu/mason-null-ls.nvim", dependencies = { "mason-org/mason.nvim" } },
 
-		-- formatting & linting
-		{ "nvimtools/none-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+		-- formatting (conform runs external formatters, falls back to LSP formatting)
+		{
+			"stevearc/conform.nvim",
+			event = { "BufWritePre" },
+			cmd = { "ConformInfo" },
+			dependencies = { "zapling/mason-conform.nvim" },
+			config = function() require("user.plugins.conform") end,
+		},
 
 		-- lsp
 		{ "nvimdev/lspsaga.nvim", config = function() require("user.plugins.lsp.lspsaga") end },
